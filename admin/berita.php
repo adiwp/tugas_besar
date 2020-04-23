@@ -2,17 +2,6 @@
 include"../functions/database.php";
 include"../templates/admin.header.php";
 
-// if (isset($_POST['judul'])  && isset($_POST['ringkasan'])  && isset($_POST['isi'])  && isset($_POST['tanggal'])) {
-//     $judul     = $_POST['judul'];
-//     $ringkasan = $_POST['ringkasan'];
-//     $isi       = $_POST['isi'];
-//     $tanggal   = $_POST['tanggal'];
-//     $wartawan_idwartawan = $_POST['wartawan_idwartawan'];
-    
-//     $data = $judul . " <br> " . $ringkasan . " <br> " . $isi . " <br> " . $tanggal . " <br> " . $wartawan_idwartawan;
-// } else {
-//     $data = "Kosong gaes";
-// }
 if (isset($_POST['judul'])  && isset($_POST['ringkasan'])  && isset($_POST['isi'])  && isset($_POST['tanggal'])) {
     $stmt = $conn->prepare("INSERT INTO berita (judul, ringkasan, isi, tanggal, wartawan_idwartawan) VALUES (:judul,:ringkasan,:isi,:tanggal, :wartawan_idwartawan)");
     $stmt->bindParam(':judul', $judul);
