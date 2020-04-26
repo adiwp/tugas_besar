@@ -2,6 +2,9 @@
 include"../functions/database.php";
 include"../templates/admin.header.php";
 
+/* cek apakah ada variabel dari form isi_berita.php?
+ * jika ada, maka statement di bawah akan dikerjakan untuk memasukkan nilai ke dalam database
+ */
 if (isset($_POST['judul'])  && isset($_POST['ringkasan'])  && isset($_POST['isi'])  && isset($_POST['tanggal'])) {
     $stmt = $conn->prepare("INSERT INTO berita (judul, ringkasan, isi, tanggal, wartawan_idwartawan) VALUES (:judul,:ringkasan,:isi,:tanggal, :wartawan_idwartawan)");
     $stmt->bindParam(':judul', $judul);
@@ -19,35 +22,38 @@ if (isset($_POST['judul'])  && isset($_POST['ringkasan'])  && isset($_POST['isi'
     $stmt->execute();
 }
 ?>
-                <h2>Data Berita</h2>
+<h2>Data Berita</h2>
+<!-- Tabel row data -->
+<table class="table table-bordered">
+    <!-- heading table -->
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Judul</th>
+            <th>Ringkasan</th>
+            <th>Isi</th>
+            <th>Tanggal</th>
+        </tr>    
+    </thead>
 <?php
-echo "<table class=\"table table-bordered\">";
-echo "<tr><th>Id</th><th>Judul</th><th>Ringkasan</th><th>Isi</th></tr>";
-
-class TableRows extends RecursiveIteratorIterator {
-    function __construct($it) {
-        parent::__construct($it, self::LEAVES_ONLY);
-    }
-    function current() {
-        return "<td>" . parent::current(). "</td>";
-    }
-    function beginChildren() {
-        echo "<tr>";
-    }
-    function endChildren() {
-        echo "</tr>";
-    }
-}
-
-    $stmt2 = $conn->prepare("SELECT idBerita, judul, ringkasan, isi FROM berita");
-    $stmt2->execute();
-
-    // set the resulting array to associative
-    $result = $stmt2->setFetchMode(PDO::FETCH_ASSOC);
-    foreach(new TableRows(new RecursiveArrayIterator($stmt2->fetchAll())) as $k=>$v) {
-        echo $v;
-    }
-    echo "</table>";
-
+// menarik data dari Database untuk ditampilkan ke dalam tabel!
+$stmt2 = $conn->prepare("SELECT idBerita, judul, ringkasan, isi, tanggal FROM berita ORDER BY idBerita DESC");
+$stmt2->execute();
+$stmt2->setFetchMode(PDO::FETCH_ASSOC);
+?>
+    <!-- body table -->
+    <tbody>
+        <?php while ($row = $stmt2->fetch()): ?>
+        <tr>
+            <td><?php echo htmlspecialchars($row['idBerita']) ?></td>
+            <td><?php echo htmlspecialchars($row['judul']); ?></td>
+            <td><?php echo htmlspecialchars($row['ringkasan']); ?></td>
+            <td><?php echo htmlspecialchars($row['isi']); ?></td>
+            <td><?php echo htmlspecialchars($row['tanggal']); ?></td>
+        </tr>
+        <?php endwhile; ?>
+    </tbody>
+</table>
+<?php
 include"../templates/admin.footer.php";
 ?>

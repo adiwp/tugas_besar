@@ -1,3 +1,18 @@
+section#headline {
+    padding-top: 20px;
+}
+
+section#content {
+    margin-bottom: 50px;
+}
+
+article.berita {
+    border: 1px dashed #C0D2D7;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #CCE6D5
+}
 .footer-copyright {
     color: white;
 }
