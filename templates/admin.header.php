@@ -77,15 +77,27 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="wartawan.php">
                         <span data-feather="users"></span>
                         Wartawan
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="isi-wartawan.php">
+                        <span data-feather="users"></span>
+                        Isi Data Wartawan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pelanggan.php">
                         <span data-feather="users"></span>
                         Pelanggan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="isi-pelanggan.php">
+                        <span data-feather="users"></span>
+                        Isi Data Pelanggan
                         </a>
                     </li>
                 </ul>

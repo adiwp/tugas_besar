@@ -19,6 +19,16 @@ include"../templates/admin.header.php";
                         <label for="isi">Isi Berita</label>
                         <textarea name="isi" class="form-control" id="isi" rows="3"></textarea>
                     </div>
+                    <!--    Relasi Wartawan ke Berita 
+                            Oleh Karena itu, harus ada
+                            id Wartawan, untuk menginformasikan
+                            wartawan yang membuat berita ini
+
+                            pada contoh ini, kita asumsikan
+                            wartawan yang membuat berita
+                            adalah wartawan dengan idwartawan
+                            2
+                    -->
                     <input type="hidden" id="wartawan_idwartawan" name="wartawan_idwartawan" value=2>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
