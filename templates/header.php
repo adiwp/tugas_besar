@@ -43,7 +43,7 @@
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                     </ul>
-                    <a href="#" class="btn btn-primary mr-2 ml-3">Login</a> 
+                    <a href="admin/login.php" class="btn btn-primary mr-2 ml-3">Login</a> 
                     <a href="#" class="btn btn-warning">Daftar</a>
                 </div>
             </div>
