@@ -1,5 +1,5 @@
 <?php
-include"../functions/database.php";
+include "session.php";
 include"../templates/admin.header.php";
 
 /* cek apakah ada variabel dari form isi_pelanggan.php?

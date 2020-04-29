@@ -1,4 +1,5 @@
 <?php
+include "session.php";
 include"../templates/admin.header.php";
 ?>
                 <h2>Isi data Pelanggan</h2>

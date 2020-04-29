@@ -4,16 +4,22 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
       <!-- Bootstrap CSS -->
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+      
       <!-- Custom Style CSS -->
       <?php
+      // cek path lokasi style.css
       if (isset($pth)) {
+        // ketika halaman dibuka di bawah folder root
         echo "<link rel=\"stylesheet\" href=\"" . $pth . "library/style.css\">";
       } else {
+        // ketika halaman berada di folder root
         echo "<link rel=\"stylesheet\" href=\"library/style.css\">";
       }
       ?>
+      
       <title>Harian Online IT 2020</title>
     </head>
     <body>

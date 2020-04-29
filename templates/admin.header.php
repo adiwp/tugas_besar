@@ -6,7 +6,7 @@
         <title>Admin</title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 
         <style>
         .bd-placeholder-img {
@@ -18,6 +18,12 @@
             user-select: none;
         }
 
+        .card {
+            margin: 0 auto; /* Added */
+            float: none; /* Added */
+            margin-bottom: 10px; /* Added */
+        }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
             font-size: 3.5rem;
@@ -25,7 +31,8 @@
         }
         </style>
         <!-- Custom styles for this template -->
-        <link href="https://getbootstrap.com/docs/4.4/examples/dashboard/dashboard.css" rel="stylesheet">
+        <link href="../bootstrap/css/dashboard.css" rel="stylesheet">
+        <!-- <link href="../bootstrap/css/login.css" rel="stylesheet"> -->
     </head>
     <body>
     
@@ -34,7 +41,7 @@
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Berita Online</a>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Keluar</a>
+                <a class="nav-link" href="logout.php">Keluar</a>
             </li>
         </ul>
     </nav>

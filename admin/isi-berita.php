@@ -1,11 +1,12 @@
 <?php
+include "session.php";
 include"../templates/admin.header.php";
 ?>
                 <h2>Isi data Berita</h2>
                 <form method="post" action="berita.php">
                     <div class="form-group">
                         <label for="tanggal">Tanggal dan waktu</label>
-                        <input class="form-control" type="datetime-local" id="tanggal" name="tanggal">
+                        <input class="form-control" type="date" id="tanggal" name="tanggal">
                     </div>
                     <div class="form-group">
                         <label for="judul">Judul</label>
@@ -23,13 +24,8 @@ include"../templates/admin.header.php";
                             Oleh Karena itu, harus ada
                             id Wartawan, untuk menginformasikan
                             wartawan yang membuat berita ini
-
-                            pada contoh ini, kita asumsikan
-                            wartawan yang membuat berita
-                            adalah wartawan dengan idwartawan
-                            2
                     -->
-                    <input type="hidden" id="wartawan_idwartawan" name="wartawan_idwartawan" value=2>
+                    <input type="hidden" id="wartawan_idwartawan" name="wartawan_idwartawan" value=<?php echo $idwartawan; ?>>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
 <?php
