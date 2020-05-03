@@ -1,3 +1,4 @@
+<!-- Template Halaman Frontend -->
 <!doctype html>
 <html lang="en">
     <head>
@@ -43,7 +44,8 @@
                         <a class="nav-link" href="#">About Us</a>
                     </li>
                     </ul>
-                    <a href="admin/login.php" class="btn btn-primary mr-2 ml-3">Login</a> 
+                    <!-- pakai absolute PATH -->
+                    <a href="http://tugas_besar.test/admin/login.php" class="btn btn-primary mr-2 ml-3">Login</a> 
                     <a href="#" class="btn btn-warning">Daftar</a>
                 </div>
             </div>
