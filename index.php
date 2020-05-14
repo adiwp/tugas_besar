@@ -1,4 +1,5 @@
 <?php
+include "session.php";
 include "functions/database.php";
 include "templates/header.php";
 

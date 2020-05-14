@@ -45,8 +45,9 @@
                     </li>
                     </ul>
                     <!-- pakai absolute PATH -->
-                    <a href="http://tugas_besar.test/admin/login.php" class="btn btn-primary mr-2 ml-3">Login</a> 
-                    <a href="#" class="btn btn-warning">Daftar</a>
+                    <a href="http://tugas_besar.test/admin/login.php" class="btn btn-primary mr-2 ml-3">Login Admin</a> 
+                    <a href="http://tugas_besar.test/login.php" class="btn btn-primary mr-2">Pelanggan</a> 
+                    <a href="http://tugas_besar.test/daftar.php" class="btn btn-warning">Daftar</a>
                 </div>
             </div>
         </nav>

@@ -1,4 +1,5 @@
 <?php
+include "../session.php";
 include"../functions/database.php";
 $pth = "../";
 include"../templates/header.php";
@@ -16,7 +17,7 @@ $detil->setFetchMode(PDO::FETCH_ASSOC);
                 <div class="row">
                     <article class="berita">
                     <?php while ($row = $detil->fetch()): ?>
-                        <h3><?php echo htmlspecialchars($row['judul']); ?></h3>
+                        <h3><?php echo htmlspecialchars($row['judul']); ?>, <?= $idpelanggan ?></h3>
                         <?php
                             // ambil ID wartawan, lalu ambil ke tabel wartawan supaya diambil nama wartawannya
                             $idWartawan = $row['wartawan_idwartawan'];
@@ -34,6 +35,19 @@ $detil->setFetchMode(PDO::FETCH_ASSOC);
                     <?php endwhile; ?>
                     </article>
                 </div>
+            </section>
+            <section id="komentar">
+                <h2>Komentar</h2>
+                <h2>Isi data Berita</h2>
+                <form method="post" action="index.php">
+                    <div class="form-group">
+                        <label for="isi">Isi</label>
+                        <input class="form-control" type="text" id="isi" name="isi">
+                    </div>
+                    
+                    <!-- // pelanggan -->
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </section>
 <?php
 include"../templates/footer.php";

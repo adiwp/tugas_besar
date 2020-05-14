@@ -1,12 +1,12 @@
 <?php
-include "../functions/database.php";
+include "functions/database.php";
 
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
   $admin = $conn->prepare('
-    SELECT * FROM wartawan 
+    SELECT * FROM pelanggan 
     WHERE email = :email and password = :password');
   $admin->execute(
     array(  ':email' => $_POST['email'],
@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <style>
       body, html {
         height: 100%;
@@ -72,8 +72,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../bootstrap/js/jquery-3.4.1.slim.min.js"></script>
-    <script src="../bootstrap/js/popper.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
