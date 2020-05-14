@@ -11,7 +11,7 @@ $row = $admin->fetch(PDO::FETCH_ASSOC);
 $login_session=$row['email'];
 $idpelanggan = $row['idpelanggan'];
 
-if(!isset($login_session)) {
-    header("Location: login.php");
-}
+// if(!isset($login_session)) {
+//     header("Location: login.php");
+// }
 ?>
